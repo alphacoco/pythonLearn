@@ -1,0 +1,110 @@
+1,
+>>> ord('A')
+65
+>>> chr(65)
+'A'
+
+2,return tuple
+>>> z = 2,3
+>>> z
+(2,3)
+
+>>> x,y = 2,3
+>>> x
+2
+>>> y
+3
+
+
+3,float v.s. int
+>>> 6/3
+>>> 2.0
+
+>>> 6//3
+>>> 2
+
+
+4,list v.s. int
+>>> a = [3]
+>>> for x in a:
+... 	print(x)
+...
+3
+
+>>> a = 3
+>>> for x in a
+... 	print(x)
+...
+TypeError: 'int' object is not iterable 
+
+
+5,list
+>>> L = list(range(10))
+>>> L
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> L[:]
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> L[::2]
+[0, 2, 4, 6, 8]
+
+
+6,dict
+>>> d = {'a':1, 'b':2, 'c':3}
+>>> for key in d
+...     print(key)
+...
+c
+b
+a
+>>> for value in d.values()
+...     print(value)
+...
+3
+2
+1
+>>> for k,v in d.items():
+...     print(k,v)
+...
+c 3
+b 2
+a 1
+
+
+
+7, isIterable
+>>> from collections import Iterable
+>>> isinstance('abc', Iterable)
+True
+>>> isinstance(123, Iterable)
+False
+
+
+8,enumerate
+>>> for i,value in enumerate(['a', 'b', 'c']):
+...   print(i, value)
+... 
+0 a
+1 b
+2 c
+
+
+9,
+>>> L = [(1,2), (2,3), (3,4)]
+>>> for x,y in L:
+...   print(x,y)
+... 
+1 2
+2 3
+3 4
+
+
+10,
+>>> [x*x for x in range(10)]
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> [x*x for x in range(10) if x%2 == 0]
+[0, 4, 16, 36, 64]
+>>> [m + n for m in 'abc' for n in 'xyz']
+['ax', 'ay', 'az', 'bx', 'by', 'bz', 'cx', 'cy', 'cz']
+
+
+11,
