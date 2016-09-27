@@ -9,10 +9,11 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 '''
 
 def euler004(n):
-	m = pow(10,n)
+	m1 = pow(10, n-1) 
+	m2 = pow(10, n)
 	max_Palindrome = [0, 0, 0]
-	for i in range(m):
-		for j in range(m):
+	for i in range(m1, m2):
+		for j in range(m1, m2):
 			if isPalindrome(i*j):
 				if i*j > max_Palindrome[2]:
 					max_Palindrome = [i, j, i*j]
