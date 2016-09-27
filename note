@@ -107,4 +107,68 @@ False
 ['ax', 'ay', 'az', 'bx', 'by', 'bz', 'cx', 'cy', 'cz']
 
 
-11,
+11,list v.s. generator
+>>> L = [x for x in range(10)]
+>>> L
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> G = (x for x in range(10))
+>>> G
+<generator object <genexpr> at 0x7ff6e2286b88>
+>>> for x in G:
+...     print(x)
+... 
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+12,
+>>> a, b = b, a
+    #the same as:
+
+>>> t = (b, a)
+>>> a = t[0]
+>>> b = t[1]
+
+
+13,Iterable v.s. Iterator
+>>> from collections import Iterable, Iterator
+>>> isinstance([], Iterable)
+True
+>>> isinstance({}, Iterable)
+True
+>>> isinstance((),Iterable)
+True
+
+>>> isinstance([], Iterator)
+False
+>>> isinstance({}, Iterator)
+False
+>>> isinstance((), Iterator)
+False
+>>> isinstance((x for x in range(10)), Iterator)
+True
+
+>>> isinstance(iter([]), Iterator)
+True
+
+
+14,for v.s. iterator
+for x in [1, 2, 3, 4, 5]:
+	pass
+    
+    # the same as
+
+it = iter([1, 2, 3, 4, 5])
+while True:
+	try:
+		x = next(it)
+	except StopIteration:
+		break
