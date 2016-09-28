@@ -172,3 +172,50 @@ while True:
 		x = next(it)
 	except StopIteration:
 		break
+
+15,id
+>>> x = y =  3
+>>> id(x) == id(y)
+True
+
+>>> x = 3
+>>> y = 4
+>>> id(x)
+1000
+>>> id(y)
+1008
+>>> x, y = y, x
+>>> id(x)
+1008
+>>> id(y)
+1000
+
+
+16,
+>>> def add(x, y, f):
+...     return f(x) + f(y)
+... 
+>>> add(3, -1, abs)
+4
+
+
+17, map
+>>> def f(x):
+...     return x*x
+... 
+>>> l = map(f, [1, 2, 3, 4, 5, 6, 7, 8, 9])
+>>> l
+<map object at 0x7fef7aebc358>
+>>> list(l)
+[1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> type(l)
+<class 'map'>
+
+
+18,reduce
+>>> from functools import reduce
+>>> def add(x, y):
+...     return x + y
+...
+>>> reduce(add, [1, 2, 3, 4])
+10
