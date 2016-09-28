@@ -11,8 +11,8 @@ What is the smallest positive number that is evenly divisible by all of the numb
 # Lowest Common Multiple(LCM)
 # Greatest Common Divisor(GCD)
 
-'''
 # the Recursion way
+'''
 def euler005(n):
 	L = [x for x in range(1,n+1)]
 	return euler005Helper(L, 0, len(L) - 1)
@@ -25,11 +25,16 @@ def euler005Helper(L, low, high):
 '''
 
 # the iteration way
+'''
 def euler005(n):
 	y = 1
 	for x in range(1, n+1):
 		y = lcm(x, y)
 	return y
+'''
+from functools import reduce
+def euler005(n):
+	return reduce(lcm, [x for x in range(1, n+1)])
 
 def lcm(u, v):
 	if u < v:
